@@ -33,8 +33,10 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    env:
+      MONGODB_USERNAME: otscheck
     steps:
       - name: Output information
         run: |
           echo "MONGODB_USERNAME : ${{ env.MONGODB_USERNAME }}"
-          echo "MONGODB_DB_NAME : $MONGODB_DB_NAME "
+          echo "MONGODB_DB_NAME : $MONGODB_DB_NAME"
